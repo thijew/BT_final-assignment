@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School project belasting form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main>
+        <h1>
+            Aangifte erfbelasting
+        </h1>
+        <form method="post" action="">
+
+            <fieldset>
+                <legend>1</legend>
+                <h1>Gegevens van overledene</h1>
+                <p>Vul hier de gegevens in van de overledene.</p>
+                <p>1a</p>
+
+                <label for="firstLetters">
+                    Voorletter(s)
+                </label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="middleName">
+                    Tussenvoegsel(s)
+                </label>
+                <input type="text" id="middlename" name="middleName" required>
+
+                <label for="surName">
+                    Achternaam
+                </label>
+                <input type="text" id="surName" name="surName" required>
+
+                <label for="surName">
+                    Achternaam
+                </label>
+                <input type="text" id="surName" name="surName" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>1b</legend>
+                <label for="married">
+                    Was de overledene getrouwd? of had de overledene een geregistreerd partnerschap? op het moment van
+                    overlijden?
+                </label>
+                <label>
+                    <input type="radio" id="marriedY" name="married" value="yes" required> Ja
+                </label>
+                <label>
+                    <input type="radio" id="marriedN" name="married" value="no" required> Nee
+                </label>
+
+                <fieldset class="akte">
+                    <label for="akte">
+                        Hadden de overledene en diens echtgenoot of
+                        geregistreerd partner huwelijkse of partner schaps-
+                        voorwaarden laten vastleggen in een notariële akte?
+                    </label>
+                    <label>
+                        <input type="radio" id="akteY" name="akteY" value="yes" required> Ja
+                    </label>
+                    <p id="showIfYes">Dit verschijnt alleen wanneer je 'Ja' hebt gekozen.</p>
+                    <label>
+                        <input type="radio" id="akteN" name="akteN" value="no" required> Nee
+                    </label>
+                </fieldset>
+
+
+        </form>
+
+    </main>
+
+
+
+</body>
+
+</html>
