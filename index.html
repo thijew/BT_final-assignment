@@ -17,16 +17,13 @@
         <form method="post" action="">
 
             <fieldset>
-                <legend>1</legend>
-                <h1>Gegevens van overledene</h1>
+                <legend>1. Gegevens van overledene</legend>
                 <p>Vul hier de gegevens in van de overledene.</p>
                 <p>1a</p>
-
                 <label for="firstLetters">
                     Voorletter(s)
                 </label>
                 <input type="text" id="firstName" name="firstName" required>
-
                 <label for="middleName">
                     Tussenvoegsel(s)
                 </label>
@@ -44,11 +41,8 @@
             </fieldset>
 
             <fieldset>
-                <legend>1b</legend>
-                <label for="married">
-                    Was de overledene getrouwd? of had de overledene een geregistreerd partnerschap? op het moment van
-                    overlijden?
-                </label>
+                <legend>1b. Was de overledene getrouwd? of had de overledene een geregistreerd partnerschap? op het
+                    moment van overlijden?</legend>
                 <label>
                     <input type="radio" id="marriedY" name="married" value="yes" required> Ja
                 </label>
@@ -57,17 +51,17 @@
                 </label>
 
                 <fieldset class="akte">
-                    <label for="akte">
+                    <legend>
                         Hadden de overledene en diens echtgenoot of
                         geregistreerd partner huwelijkse of partner schaps-
                         voorwaarden laten vastleggen in een notariële akte?
-                    </label>
+                    </legend>
                     <label>
-                        <input type="radio" id="akteY" name="akteY" value="yes" required> Ja
+                        <input type="radio" id="akteY" name="akte" value="yes" required> Ja
                     </label>
                     <p id="showIfYes">Dit verschijnt alleen wanneer je 'Ja' hebt gekozen.</p>
                     <label>
-                        <input type="radio" id="akteN" name="akteN" value="no" required> Nee
+                        <input type="radio" id="akteN" name="akte" value="no" required> Nee
                     </label>
                 </fieldset>
 
