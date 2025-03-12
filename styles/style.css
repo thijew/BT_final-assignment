@@ -14,3 +14,15 @@ form {
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 1rem;
 }
+
+fieldset:nth-of-type(3) {
+	display: none;
+}
+
+form:has(input[value="yes"]:checked) fieldset:nth-of-type(3) {
+	display: block;
+}
+
+input:valid {
+	background-color: limegreen;
+}

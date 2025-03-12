@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School project belasting form</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -16,55 +16,54 @@
         </h1>
         <form method="post" action="">
 
+            <!-- basic ifo -->
             <fieldset>
-                <legend>1. Gegevens van overledene</legend>
-                <p>Vul hier de gegevens in van de overledene.</p>
-                <p>1a</p>
-                <label for="firstLetters">
-                    Voorletter(s)
-                </label>
-                <input type="text" id="firstName" name="firstName" required>
-                <label for="middleName">
-                    Tussenvoegsel(s)
-                </label>
-                <input type="text" id="middlename" name="middleName" required>
-
-                <label for="surName">
-                    Achternaam
-                </label>
-                <input type="text" id="surName" name="surName" required>
-
-                <label for="surName">
-                    Achternaam
-                </label>
-                <input type="text" id="surName" name="surName" required>
+                <h2>1. Gegevens van overledene</h2>
+                <legend>1a. Vul hier de gegevens in van de overledene</legend>
+                <label for="firstLetters">Voorletter(s)<input type="text" id="firstName" name="firstName"
+                        required></label>
+                <label for="middleName">Tussenvoegsel(s)<input type="text" id="middlename" name="middleName"
+                        placeholder="van der" required></label>
+                <label for="surName">Achternaam<input type="text" id="surName" name="surName" placeholder="Rodriguez"
+                        required></label>
+                <label for="bsn">Burgerservicenummer
+                    <input type="number" id="bsn" name="bsn" placeholder="123456789" pattern="^[0-9]{9}$" maxlength="9"
+                        required></label>
             </fieldset>
 
+
+            <!-- getrouwd of niet ? if no go to 1C -->
             <fieldset>
                 <legend>1b. Was de overledene getrouwd? of had de overledene een geregistreerd partnerschap? op het
                     moment van overlijden?</legend>
+                <label><input type="radio" id="marriedY" name="married" value="yes" required> Ja</label>
+                <label><input type="radio" id="marriedN" name="married" value="no" required> Nee</label>
+
+            </fieldset>
+
+            <!-- Hide dit met js zodat dat site altijd blijft werken -->
+            <fieldset>
+                <legend>
+                    Hadden de overledene en diens echtgenoot of geregistreerd partner huwelijkse of partner
+                    schansvoorwaarden laten vastleggen in een notariële akte?
+                </legend>
+                <label><input type="radio" id="akteY" name="akte" value="yes" required> Ja</label>
                 <label>
-                    <input type="radio" id="marriedY" name="married" value="yes" required> Ja
-                </label>
-                <label>
-                    <input type="radio" id="marriedN" name="married" value="no" required> Nee
+                    <input type="radio" id="akteN" name="akte" value="no" required> Nee <!-- itallic -->
+                    Stuur een kopie van de akte mee met de aangifte.<!-- itallic --> <input type="file" id="docpicker"
+                        accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
                 </label>
 
-                <fieldset class="akte">
-                    <legend>
-                        Hadden de overledene en diens echtgenoot of
-                        geregistreerd partner huwelijkse of partner schaps-
-                        voorwaarden laten vastleggen in een notariële akte?
-                    </legend>
-                    <label>
-                        <input type="radio" id="akteY" name="akte" value="yes" required> Ja
-                    </label>
-                    <p id="showIfYes">Dit verschijnt alleen wanneer je 'Ja' hebt gekozen.</p>
-                    <label>
-                        <input type="radio" id="akteN" name="akte" value="no" required> Nee
-                    </label>
-                </fieldset>
+                <!-- gerigstreered verstering -->
+                <legend>Hadden de overledene en diens echtgenoot of geregistreerd partner een finaal versterkring?
+                </legend>
+                <label><input type="radio" id="finaalY" name="finaal" value="yes" required> Nee</label>
+                <label><input type="radio" id="finaalN" name="finaal" value="no" required> Ja</label>
 
+                <!-- datum huewlijk/ partnerschapswaarde -->
+                <legend>Datum huwelijkse of partnerschapswaarde</legend>
+                <label><input type="date"></label>
+            </fieldset>
 
         </form>
 
