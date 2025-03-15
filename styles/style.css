@@ -23,8 +23,6 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	margin: 1rem;
-	width: 100lvw;
-	max-width: fit-content;
 }
 
 form {
