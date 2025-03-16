@@ -19,17 +19,17 @@
         </h1>
         <form method="post" action="">
 
+            <h2>1. Gegevens van overledene</h2>
             <!-- basic ifo -->
             <fieldset>
-                <h2>1. Gegevens van overledene</h2>
                 <legend>1a. Vul hier de gegevens in van de overledene</legend>
-                <label for="firstLetters">Voorletter(s)<input type="text" id="firstName" name="firstName"
-                        required></label>
-                <label for="middleName">Tussenvoegsel(s)<input type="text" id="middleName" name="middleName"
-                        placeholder="van der"></label>
-                <label for="surName">Achternaam<input type="text" id="surName" name="surName" placeholder="Rodriguez"
-                        required></label>
-                <label for="bsn">Burgerservicenummer
+                <label class="basicInfo" for="firstLetters">Voorletter(s)<input type="text" id="firstName"
+                        name="firstName" placeholder="A.B." required></label>
+                <label class="basicInfo" for="middleName">Tussenvoegsel(s)<input type="text" id="middleName"
+                        name="middleName" placeholder="van der"></label>
+                <label class="basicInfo" for="surName">Achternaam<input type="text" id="surName" name="surName"
+                        placeholder="Rodriguez" required></label>
+                <label class="basicInfo" for="bsn">Burgerservicenummer
                     <input type="number" id="bsn" name="bsn" placeholder="123456789" pattern="^[0-9]{9}$" maxlength="9"
                         required></label>
             </fieldset>
@@ -51,11 +51,11 @@
                     schansvoorwaarden laten vastleggen in een notariële akte?
                 </legend>
                 <label><input type="radio" id="akteY" name="akte" value="yes" required>
-                    Ja <i>Stuur een kopie van de akte mee met de aangifte.</i></label>
+                    Ja <i>Stuur een kopie van de akte mee met de aangifte.</i>
+                    <input type="file" id="docPicker"
+                        accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" /></label>
                 <label>
                     <input type="radio" id="akteN" name="akte" value="no" required>Nee
-                    <input type="file" id="docpicker"
-                        accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
                 </label>
 
                 <!-- HIDDEN   gerigstreered verstering -->
@@ -73,7 +73,7 @@
 
     </main>
 
-    <script src="scripts/hide-1c.js"></script>
+    <!-- <script src="scripts/hide-1c.js"></script> -->
 </body>
 
 </html>
