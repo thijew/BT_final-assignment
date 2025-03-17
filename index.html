@@ -24,14 +24,14 @@
             <fieldset>
                 <legend>1a. Vul hier de gegevens in van de overledene</legend>
                 <label class="basicInfo" for="firstLetters">Voorletter(s)<input type="text" id="firstName"
-                        name="firstName" placeholder="A.B." required></label>
+                        name="firstLetters" placeholder="A.B." required></label>
                 <label class="basicInfo" for="middleName">Tussenvoegsel(s)<input type="text" id="middleName"
                         name="middleName" placeholder="van der"></label>
                 <label class="basicInfo" for="surName">Achternaam<input type="text" id="surName" name="surName"
                         placeholder="Rodriguez" required></label>
                 <label class="basicInfo" for="bsn">Burgerservicenummer
-                    <input type="number" id="bsn" name="bsn" placeholder="123456789" pattern="^[0-9]{9}$" maxlength="9"
-                        required></label>
+                    <input type="number" id="bsn" name="bsn" placeholder="123456789" pattern="^[0-9]{9}$" minlength="9"
+                        maxlength="9" required></label>
             </fieldset>
 
 
@@ -73,6 +73,7 @@
 
     </main>
 
+    <script src="scripts/show-file-input.js"></script>
     <!-- <script src="scripts/hide-1c.js"></script> -->
 </body>
 

@@ -8,6 +8,7 @@ https://www.geeksforgeeks.org/how-to-validate-input-field-in-the-html-form/
 https://www.w3schools.com/html/html_form_input_types.asp
 https://css-tricks.com/the-css-has-selector/
 https://www.w3schools.com/css/css3_mediaqueries.asp
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation
 
 <details>
 https://github.com/thijew/BT_final-assignment.git
