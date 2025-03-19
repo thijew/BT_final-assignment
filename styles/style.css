@@ -58,6 +58,7 @@ body {
 
 header {
 	color: var(--color-invalid);
+	background-color: var(--accent-color);
 }
 
 h1,
@@ -132,13 +133,10 @@ form:has(input[type="file"][value="yes"]:checked) [data-openklap="married"] {
 
 form:has(input[type="text"]) [data-openklap="married"] {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
 }
 
 form:has(input[name="married"][value="yes"]:checked) [data-openklap="married"] {
 	display: flex;
-	flex-direction: column;
 }
 
 .has-js {
