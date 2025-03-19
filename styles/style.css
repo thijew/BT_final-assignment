@@ -56,9 +56,22 @@ body {
 	gap: 0.5rem;
 }
 
+header {
+	color: var(--color-invalid);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
 h1 {
 	font-family: "nsSansBold", sans-serif, Arial, Helvetica;
-	padding: 0.5rem;
+	padding: 1rem;
 	background-color: var(--color-white);
 	/* kan ik hier een psuedo van maken? */
 	box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
@@ -73,26 +86,40 @@ h2 {
 	box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
 }
 
+h3 {
+	font-family: "nsSansBold", sans-serif, Arial, Helvetica;
+	padding: 0.5rem;
+	font-size: 1rem;
+	background-color: var(--color-white);
+	/* kan ik hier een psuedo van maken? */
+	box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
+}
+
 form {
 	display: flex;
 	gap: 1rem;
 	flex-direction: column;
 }
 
-fieldset {
-	border: none;
+/* fieldset in een div gezet want geleerd dat de legend een los element is. */
+.fieldset {
 	font-size: 0.8rem;
 	background-color: var(--secondary-color);
 	padding: 0.5rem;
-	height: 100%;
 	box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
 }
 
-/* Waarom krijgt legend geen bg ? */
+fieldset {
+	border: none;
+	display: flex;
+	flex-direction: column;
+}
+
 legend {
 	font-family: "nsSansBold", sans-serif, Arial, Helvetica;
 	color: var(--txt-color);
 	background-color: var(--secondary-color);
+	padding-bottom: 0.5rem;
 }
 
 #docPicker {
@@ -103,12 +130,7 @@ form:has(input[type="file"][value="yes"]:checked) [data-openklap="married"] {
 	display: flex;
 }
 
-.has-js {
-	fieldset:nth-of-type(3) {
-		display: none;
-	}
-}
-label:has(input[type="text"]) {
+form:has(input[type="text"]) [data-openklap="married"] {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -117,6 +139,22 @@ label:has(input[type="text"]) {
 form:has(input[name="married"][value="yes"]:checked) [data-openklap="married"] {
 	display: flex;
 	flex-direction: column;
+}
+
+.has-js {
+	.fieldset:nth-of-type(3),
+	.fieldset:nth-of-type(4),
+	.fieldset:nth-of-type(5) {
+		display: none;
+	}
+}
+
+/* Improve input styling */
+input {
+	padding: 0.5rem;
+	border: 0.1rem solid var(--accent-color-light);
+	border-radius: 0.25rem;
+	transition: border-color 0.3s ease;
 }
 
 input:user-valid {
@@ -136,6 +174,7 @@ input::placeholder {
 }
 
 input:focus {
+	outline: none;
 	border-color: var(--txt-color);
 }
 

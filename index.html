@@ -13,6 +13,10 @@
 
 <body>
 
+    <header>
+        <h3>Deze website is puur gemaakt voor school en heeft niets te met met de belastingdienst of NS.</h3>
+    </header>
+
     <main>
         <h1>
             Aangifte erfbelasting
@@ -20,54 +24,71 @@
         <form method="post" action="">
 
             <h2>1. Gegevens van overledene</h2>
-            <!-- basic ifo -->
-            <fieldset>
-                <legend>1a. Vul hier de gegevens in van de overledene</legend>
-                <label class="basicInfo" for="firstLetters">Voorletter(s)<input type="text" id="firstName"
-                        name="firstLetters" placeholder="A.B." required></label>
-                <label class="basicInfo" for="middleName">Tussenvoegsel(s)<input type="text" id="middleName"
-                        name="middleName" placeholder="van der"></label>
-                <label class="basicInfo" for="surName">Achternaam<input type="text" id="surName" name="surName"
-                        placeholder="Rodriguez" required></label>
-                <label class="basicInfo" for="bsn">Burgerservicenummer
-                    <input type="number" id="bsn" name="bsn" placeholder="123456789" pattern="^[0-9]{9}$" minlength="9"
-                        maxlength="9" required></label>
-            </fieldset>
+
+            <!-- basic info -->
+            <div class="fieldset">
+                <fieldset>
+                    <legend>1a. Vul hier de gegevens in van de overledene</legend>
+                    <label class="basicInfo" for="firstLetters">Voorletter(s)<input type="text" id="firstName"
+                            name="firstLetters" placeholder="A.B." required></label>
+                    <label class="basicInfo" for="middleName">Tussenvoegsel(s)<input type="text" id="middleName"
+                            name="middleName" placeholder="van der"></label>
+                    <label class="basicInfo" for="surName">Achternaam<input type="text" id="surName" name="surName"
+                            placeholder="Rodriguez" required></label>
+                    <label class="basicInfo" for="bsn">Burgerservicenummer
+                        <input type="number" id="bsn" name="bsn" placeholder="123456789" pattern="^[0-9]{9}$"
+                            minlength="9" maxlength="9" required></label>
+                </fieldset>
+            </div>
 
 
             <!-- getrouwd of niet ? if no go to 1C -->
-            <fieldset>
-                <legend>1b. Was de overledene getrouwd? of had de overledene een geregistreerd partnerschap? op het
-                    moment van overlijden?</legend>
-                <label><input type="radio" id="marriedY" name="married" value="yes" required> Ja</label>
-                <label><input type="radio" id="marriedN" name="married" value="no" required> Nee</label>
+            <div class="fieldset">
+                <fieldset>
+                    <legend>1b. Was de overledene getrouwd? of had de overledene een geregistreerd partnerschap? op
+                        het
+                        moment van overlijden?</legend>
+                    <label><input type="radio" id="marriedY" name="married" value="yes" required> Ja</label>
+                    <label><input type="radio" id="marriedN" name="married" value="no" required> Nee</label>
+                </fieldset>
+            </div>
 
-            </fieldset>
+            <!-- Hide dit met css zodat dat site altijd blijft werken -->
+            <div class="fieldset" data-openklap="married">
+                <fieldset>
+                    <legend>
+                        Hadden de overledene en diens echtgenoot of geregistreerd partner huwelijkse of partner
+                        schansvoorwaarden laten vastleggen in een notariële akte?
+                    </legend>
+                    <label><input type="radio" id="akteY" name="akte" value="yes" required>
+                        Ja <i>Stuur een kopie van de akte mee met de aangifte.</i>
+                        <input type="file" id="docPicker"
+                            accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" /></label>
+                    <label>
+                        <input type="radio" id="akteN" name="akte" value="no" required>Nee
+                    </label>
+                </fieldset>
+            </div>
 
-            <!-- Hide dit met js zodat dat site altijd blijft werken -->
-            <fieldset data-openklap="married">
-                <legend>
-                    Hadden de overledene en diens echtgenoot of geregistreerd partner huwelijkse of partner
-                    schansvoorwaarden laten vastleggen in een notariële akte?
-                </legend>
-                <label><input type="radio" id="akteY" name="akte" value="yes" required>
-                    Ja <i>Stuur een kopie van de akte mee met de aangifte.</i>
-                    <input type="file" id="docPicker"
-                        accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" /></label>
-                <label>
-                    <input type="radio" id="akteN" name="akte" value="no" required>Nee
-                </label>
-
-                <!-- HIDDEN   gerigstreered verstering -->
-                <legend>Hadden de overledene en diens echtgenoot of geregistreerd partner een finaal versterkring?
+            <!-- HIDDEN   gerigstreered verstering -->
+            <div class="fieldset" data-openklap="married">
+                <fieldset></fieldset>
+                <legend>Hadden de overledene en diens echtgenoot of geregistreerd partner een finaal
+                    versterkring?
                 </legend>
                 <label><input type="radio" id="finaalY" name="finaal" value="yes" required> Nee</label>
                 <label><input type="radio" id="finaalN" name="finaal" value="no" required> Ja</label>
+                </fieldset>
+            </div>
 
-                <!-- HIDDEN datum huewlijk/ partnerschapswaarde -->
+
+            <!-- HIDDEN datum huewlijk/ partnerschapswaarde -->
+            <div class="fieldset" data-openklap="married">
+                <fieldset></fieldset>
                 <legend>Datum huwelijkse of partnerschapswaarde</legend>
                 <label><input type="date"></label>
-            </fieldset>
+                </fieldset>
+            </div>
 
         </form>
 
