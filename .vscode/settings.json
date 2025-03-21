@@ -1,4 +1,13 @@
 {
 	"liveServer.settings.port": 5501,
-	"cSpell.words": ["Burgerservervicenummer"]
+	"cSpell.words": ["Burgerservicenummer"],
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"prettier.printWidth": 120,
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": false,
+	"prettier.singleQuote": false,
+	"prettier.htmlWhitespaceSensitivity": "css"
 }

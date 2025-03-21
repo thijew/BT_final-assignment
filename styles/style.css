@@ -1,179 +1,179 @@
 /* vragen voor font */
 
 :root {
-	--secondary-color: rgb(248, 203, 73);
-	--btn-color: rgb(41, 97, 204);
-	--accent-color: rgb(107, 106, 121);
-	--accent-color-light: rgb(197, 197, 204);
-	--txt-color: rgb(17, 47, 125);
-	--txt-color-secondary: rgb(197, 197, 203);
-	--color-white: rgb(255, 255, 255);
-	--color-black: rgb(0, 0, 0);
-	--color-bg: rgb(230, 230, 233);
-	--color-valid: rgb(4, 196, 4);
-	--color-invalid: rgb(255, 0, 0);
+    --secondary-color: rgb(248, 203, 73);
+    --btn-color: rgb(41, 97, 204);
+    --accent-color: rgb(107, 106, 121);
+    --accent-color-light: rgb(197, 197, 204);
+    --txt-color: rgb(17, 47, 125);
+    --txt-color-secondary: rgb(197, 197, 203);
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(0, 0, 0);
+    --color-bg: rgb(230, 230, 233);
+    --color-valid: rgb(4, 196, 4);
+    --color-invalid: rgb(255, 0, 0);
 }
 
 @supports (color: color(display-p3 1 1 1)) {
-	:root {
-		--secondary-color: color(display-p3 0.973 0.796 0.286);
-		--btn-color: color(display-p3 0.161 0.38 0.8);
-		--accent-color: color(display-p3 0.42 0.416 0.475);
-		--accent-color-light: color(display-p3 0.773 0.773 0.8);
-		--txt-color: color(display-p3 0.067 0.184 0.49);
-		--txt-color-secondary: color(display-p3 0.773 0.773 0.796);
-		--color-white: color(display-p3 1 1 1);
-		--color-black: color(display-p3 0 0 0);
-		--color-bg: color(display-p3 0.902 0.902 0.914);
-		--color-valid: color(display-p3 0 0.502 0);
-		--color-invalid: color(display-p3 1 0 0);
-	}
+    :root {
+        --secondary-color: color(display-p3 0.973 0.796 0.286);
+        --btn-color: color(display-p3 0.161 0.38 0.8);
+        --accent-color: color(display-p3 0.42 0.416 0.475);
+        --accent-color-light: color(display-p3 0.773 0.773 0.8);
+        --txt-color: color(display-p3 0.067 0.184 0.49);
+        --txt-color-secondary: color(display-p3 0.773 0.773 0.796);
+        --color-white: color(display-p3 1 1 1);
+        --color-black: color(display-p3 0 0 0);
+        --color-bg: color(display-p3 0.902 0.902 0.914);
+        --color-valid: color(display-p3 0 0.502 0);
+        --color-invalid: color(display-p3 1 0 0);
+    }
 }
 
 @font-face {
-	font-family: nsSans;
-	src: url(/fonts/nssans-regular.woff2);
+    font-family: nsSans;
+    src: url(/fonts/nssans-regular.woff2);
 }
 
 @font-face {
-	font-family: nsSansBold;
-	src: url(/fonts/nssans-bold.woff2);
+    font-family: nsSansBold;
+    src: url(/fonts/nssans-bold.woff2);
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	background-color: var(--color-bg);
-	font-family: "nsSans", sans-serif, Arial, Helvetica;
-	color: var(--txt-color);
-	gap: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    font-family: "nsSans", sans-serif, Arial, Helvetica;
+    color: var(--txt-color);
+    gap: 0.5rem;
+    text-wrap: balance;
 }
 
 header {
-	color: var(--color-invalid);
-	background-color: var(--accent-color);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	text-wrap: balance;
+    color: var(--color-invalid);
 }
 
 h1 {
-	font-family: "nsSansBold", sans-serif, Arial, Helvetica;
-	padding: 1rem;
-	background-color: var(--color-white);
-	/* kan ik hier een psuedo van maken? */
-	box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
+    font-family: "nsSansBold", sans-serif, Arial, Helvetica;
+    padding: 0.5rem;
+    background-color: var(--color-white);
+    /* kan ik hier een psuedo van maken? */
+    box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
 }
 
 h2 {
-	font-family: "nsSansBold", sans-serif, Arial, Helvetica;
-	padding: 0.5rem;
-	font-size: 1.2rem;
-	background-color: var(--color-white);
-	/* kan ik hier een psuedo van maken? */
-	box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
-}
-
-h3 {
-	font-family: "nsSansBold", sans-serif, Arial, Helvetica;
-	padding: 0.5rem;
-	font-size: 1rem;
-	background-color: var(--color-white);
-	/* kan ik hier een psuedo van maken? */
-	box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
+    font-family: "nsSansBold", sans-serif, Arial, Helvetica;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background-color: var(--color-white);
+    /* kan ik hier een psuedo van maken? */
+    box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
 }
 
 form {
-	display: flex;
-	gap: 1rem;
-	flex-direction: column;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    max-width: 100%;
 }
 
 /* fieldset in een div gezet want geleerd dat de legend een los element is. */
 .fieldset {
-	font-size: 0.8rem;
-	background-color: var(--secondary-color);
-	padding: 0.5rem;
-	box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
+    font-size: 0.8rem;
+    background-color: var(--secondary-color);
+    padding: 0.5rem;
+    box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
 }
 
 fieldset {
-	border: none;
-	display: flex;
-	flex-direction: column;
+    border: none;
+    display: flex;
+    flex-direction: column;
 }
 
 legend {
-	font-family: "nsSansBold", sans-serif, Arial, Helvetica;
-	color: var(--txt-color);
-	background-color: var(--secondary-color);
-	padding-bottom: 0.5rem;
+    font-family: "nsSansBold", sans-serif, Arial, Helvetica;
+    color: var(--txt-color);
+    background-color: var(--secondary-color);
+    padding-bottom: 0.5rem;
 }
 
-#docPicker {
-	width: 80%;
+span {
+    color: var(--txt-color-secondary);
+    font-size: 0.8rem;
 }
 
 form:has(input[type="file"][value="yes"]:checked) [data-openklap="married"] {
-	display: flex;
-}
-
-form:has(input[type="text"]) [data-openklap="married"] {
-	display: flex;
-}
-
-form:has(input[name="married"][value="yes"]:checked) [data-openklap="married"] {
-	display: flex;
+    display: flex;
 }
 
 .has-js {
-	.fieldset:nth-of-type(3),
-	.fieldset:nth-of-type(4),
-	.fieldset:nth-of-type(5) {
-		display: none;
-	}
+    .fieldset:nth-of-type(3) {
+        display: none;
+    }
+}
+label:has(input[type="text"]) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Hide marriage details fieldset by default */
+fieldset[data-openklap="married"] {
+    display: flex;
+}
+
+/* Has not gebruiken,  is beter omdraaien altijd showen */
+/* Show marriage details when "married=yes" is selected */
+form:has(input[name="married"][value="yes"]:checked) fieldset[data-openklap="married"] {
+    display: flex;
+}
+
+/* Optional: Add a smooth transition */
+fieldset[data-openklap="married"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+form:has(input[name="married"][value="yes"]:checked) fieldset[data-openklap="married"] {
+    opacity: 1;
 }
 
 /* Improve input styling */
 input {
-	padding: 0.5rem;
-	border: 0.1rem solid var(--accent-color-light);
-	border-radius: 0.25rem;
-	transition: border-color 0.3s ease;
+    padding: 0.5rem;
+    border: 0.1rem solid var(--accent-color-light);
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease;
 }
 
 input:user-valid {
-	border-color: var(--color-valid);
-	border-width: 0.1rem;
+    border-color: var(--color-valid);
+    border-width: 0.1rem;
 }
 
 input:user-invalid {
-	border-color: var(--color-invalid);
+    border-color: var(--color-invalid);
 }
 
 /* placeholder style */
 input::placeholder {
-	color: var(--txt-color-secondary);
-	font-family: "nsSans", sans-serif, Arial, Helvetica;
-	font-size: 0.8rem;
+    color: var(--txt-color-secondary);
+    font-family: "nsSans", sans-serif, Arial, Helvetica;
+    font-size: 0.8rem;
 }
 
 input:focus {
-	outline: none;
-	border-color: var(--txt-color);
+    outline: none;
+    border-color: var(--txt-color);
 }
 
 /* ns site code */
@@ -191,3 +191,118 @@ input:focus {
 	color: #003082;
 	text-overflow: ellipsis;
 } */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Reset the label:has(input[type="text"]) style that was making it row direction */
+label:has(input[type="text"]) {
+    display: flex;
+    flex-direction: column !important; /* Override any other styles */
+    justify-content: flex-start;
+}
+
+.form-group label {
+    display: flex;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* Consistent input sizing */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="file"],
+.form-group input[type="number"],
+.form-group input[type="email"] {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 0.1rem solid var(--accent-color-light);
+    border-radius: 0.25rem;
+    font-family: "nsSans", sans-serif, Arial, Helvetica;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+/* Remove any specific text input styling that might be overriding */
+.form-group input[type="text"] {
+    flex: 1;
+    width: 100% !important;
+}
+
+/* Special styling for radio buttons group */
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 0;
+}
+
+.radio-group label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+/* Keep radio buttons their normal size */
+.radio-group input[type="radio"] {
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+
+/* Help text styling */
+.help-text {
+    color: var(--txt-color-secondary);
+    font-size: 0.8rem;
+}
+
+/* Focus and validation states */
+.form-group input:focus {
+    outline: none;
+    border-color: var(--txt-color);
+    box-shadow: 0 0 0 2px rgba(17, 47, 125, 0.1);
+}
+
+/* Validation states */
+.form-group input:user-valid {
+    border-color: var(--color-valid);
+}
+
+.form-group input:user-invalid {
+    border-color: var(--color-invalid);
+}
+
+/* Initial help text - hidden by default */
+.initial-help-text {
+    display: none;
+    color: var(--txt-color-secondary);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+/* Only show help text when input is focused */
+.form-group input:focus + .initial-help-text,
+.form-group input:focus ~ .initial-help-text {
+    display: block;
+}
+
+/* Validation feedback remains hidden until needed */
+.validation-feedback {
+    display: none;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+.validation-feedback.visible {
+    display: flex;
+    flex-direction: column;
+}

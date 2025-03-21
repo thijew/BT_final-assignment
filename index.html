@@ -1,101 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
+    <head>
+        <script>
+            document.documentElement.classList.add("has-js");
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Erfbelasting Aangifte Formulier - Schoolproject</title>
+        <link rel="stylesheet" href="styles/style.css" />
+    </head>
 
-<head>
-    <script>
-        document.documentElement.classList.add('has-js');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School project belasting form</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
+    <body>
+        <header>
+            <div class="warning-banner">
+                <strong
+                    >⚠️ Let op: Dit is een schoolproject! Dit is geen officieel formulier van de Belastingdienst of
+                    NS.</strong
+                >
+            </div>
+        </header>
 
-<body>
+        <main>
+            <h1>Aangifte erfbelasting</h1>
 
-    <header>
-        <h3>Deze website is puur gemaakt voor school en heeft niets te met met de belastingdienst of NS.</h3>
-    </header>
+            <form method="post" action="" id="erfbelastingForm">
+                <h2>1. Gegevens van overledene</h2>
 
-    <main>
-        <h1>
-            Aangifte erfbelasting
-        </h1>
-        <form method="post" action="">
-
-            <h2>1. Gegevens van overledene</h2>
-
-            <!-- basic info -->
-            <div class="fieldset">
+                <!-- Your existing fieldset for basic info -->
                 <fieldset>
                     <legend>1a. Vul hier de gegevens in van de overledene</legend>
-                    <label class="basicInfo" for="firstLetters">Voorletter(s)<input type="text" id="firstName"
-                            name="firstLetters" placeholder="A.B." required></label>
-                    <label class="basicInfo" for="middleName">Tussenvoegsel(s)<input type="text" id="middleName"
-                            name="middleName" placeholder="van der"></label>
-                    <label class="basicInfo" for="surName">Achternaam<input type="text" id="surName" name="surName"
-                            placeholder="Rodriguez" required></label>
-                    <label class="basicInfo" for="bsn">Burgerservicenummer
-                        <input type="number" id="bsn" name="bsn" placeholder="123456789" pattern="^[0-9]{9}$"
-                            minlength="9" maxlength="9" required></label>
+                    <div class="form-group">
+                        <label>
+                            Voorletter(s)
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="firstLetters"
+                                placeholder="A.B."
+                                required
+                                pattern="^[A-Za-z\.]+$"
+                            />
+                        </label>
+                        <span id="firstLettersHelp" class="initial-help-text">Vul de voorletter(s) in</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="middleName">
+                            Tussenvoegsel(s)
+                            <input type="text" id="middleName" name="middleName" placeholder="van der" />
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surName">
+                            Achternaam
+                            <input type="text" id="surName" name="surName" placeholder="Rodriguez" required />
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bsn">
+                            Burgerservicenummer
+                            <input
+                                type="text"
+                                id="bsn"
+                                name="bsn"
+                                inputmode="numeric"
+                                pattern="\d{9}"
+                                maxlength="9"
+                                placeholder="123456789"
+                                required
+                                aria-describedby="bsnHelp"
+                            />
+                        </label>
+                        <span id="bsnHelp" class="initial-help-text">Vul een geldig BSN in (9 cijfers)</span>
+                    </div>
                 </fieldset>
-            </div>
 
-
-            <!-- getrouwd of niet ? if no go to 1C -->
-            <div class="fieldset">
+                <!-- Your existing married status fieldset -->
                 <fieldset>
-                    <legend>1b. Was de overledene getrouwd? of had de overledene een geregistreerd partnerschap? op
-                        het
-                        moment van overlijden?</legend>
-                    <label><input type="radio" id="marriedY" name="married" value="yes" required> Ja</label>
-                    <label><input type="radio" id="marriedN" name="married" value="no" required> Nee</label>
+                    <legend>
+                        1b. Was de overledene getrouwd? of had de overledene een geregistreerd partnerschap? op het
+                        moment van overlijden?
+                    </legend>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" id="marriedY" name="married" value="yes" required />
+                            Ja
+                        </label>
+                        <label>
+                            <input type="radio" id="marriedN" name="married" value="no" required />
+                            Nee
+                        </label>
+                    </div>
                 </fieldset>
-            </div>
 
-            <!-- Hide dit met css zodat dat site altijd blijft werken -->
-            <div class="fieldset" data-openklap="married">
-                <fieldset>
+                <!-- Your existing marriage details fieldset -->
+                <fieldset data-openklap="married">
                     <legend>
                         Hadden de overledene en diens echtgenoot of geregistreerd partner huwelijkse of partner
                         schansvoorwaarden laten vastleggen in een notariële akte?
                     </legend>
-                    <label><input type="radio" id="akteY" name="akte" value="yes" required>
-                        Ja <i>Stuur een kopie van de akte mee met de aangifte.</i>
-                        <input type="file" id="docPicker"
-                            accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" /></label>
-                    <label>
-                        <input type="radio" id="akteN" name="akte" value="no" required>Nee
-                    </label>
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" id="akteY" name="akte" value="yes" required />
+                            Ja
+                            <span class="help-text">Stuur een kopie van de akte mee met de aangifte.</span>
+                            <input
+                                type="file"
+                                id="docPicker"
+                                accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                                aria-describedby="fileHelp"
+                            />
+                        </label>
+                        <span id="fileHelp" class="help-text">Toegestane formaten: .doc, .docx, .xml</span>
+
+                        <label>
+                            <input type="radio" id="akteN" name="akte" value="no" required />
+                            Nee
+                        </label>
+                    </div>
+
+                    <legend>
+                        Hadden de overledene en diens echtgenoot of geregistreerd partner een finaal versterking?
+                    </legend>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" id="finaalY" name="finaal" value="yes" required />
+                            Nee
+                        </label>
+                        <label>
+                            <input type="radio" id="finaalN" name="finaal" value="no" required />
+                            Ja
+                        </label>
+                    </div>
+
+                    <legend>Datum huwelijkse of partnerschapswaarde</legend>
+                    <div class="form-group">
+                        <label>
+                            <input
+                                type="date"
+                                id="marriageDate"
+                                name="marriageDate"
+                                aria-describedby="dateHelp"
+                                max="<?php echo date('Y-m-d'); ?>"
+                            />
+                        </label>
+                        <span id="dateHelp" class="help-text">Kies de datum van het huwelijk of partnerschap</span>
+                    </div>
                 </fieldset>
-            </div>
 
-            <!-- HIDDEN   gerigstreered verstering -->
-            <div class="fieldset" data-openklap="married">
-                <fieldset></fieldset>
-                <legend>Hadden de overledene en diens echtgenoot of geregistreerd partner een finaal
-                    versterkring?
-                </legend>
-                <label><input type="radio" id="finaalY" name="finaal" value="yes" required> Nee</label>
-                <label><input type="radio" id="finaalN" name="finaal" value="no" required> Ja</label>
-                </fieldset>
-            </div>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary">Opslaan voor later</button>
+                    <button type="submit" class="btn btn-primary">Volgende stap</button>
+                </div>
+            </form>
+        </main>
 
+        <footer>
+            <p>© 2024 Schoolproject - Geen officiële website van de Belastingdienst</p>
+        </footer>
 
-            <!-- HIDDEN datum huewlijk/ partnerschapswaarde -->
-            <div class="fieldset" data-openklap="married">
-                <fieldset></fieldset>
-                <legend>Datum huwelijkse of partnerschapswaarde</legend>
-                <label><input type="date"></label>
-                </fieldset>
-            </div>
-
-        </form>
-
-    </main>
-
-    <script src="scripts/show-file-input.js"></script>
-    <!-- <script src="scripts/hide-1c.js"></script> -->
-</body>
-
+        <script src="scripts/show-file-input.js"></script>
+        <script src="scripts/form-storage.js"></script>
+        <script src="scripts/form-validation.js"></script>
+        <script src="scripts/form-navigation.js"></script>
+        <script src="scripts/marriage-fields.js"></script>
+    </body>
 </html>
