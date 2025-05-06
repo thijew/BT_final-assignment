@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('erfbelastingForm');
-    const inputs = form.querySelectorAll('input[required]');
+    const inputs = form.querySelectorAll('input');
 
     // Validate fields from the start
     inputs.forEach(input => {

@@ -26,7 +26,6 @@
             <form method="post" action="" id="erfbelastingForm">
                 <h2>1. Gegevens van overledene</h2>
 
-                <!-- Your existing fieldset for basic info -->
                 <fieldset>
                     <legend>1a. Vul hier de gegevens in van de overledene</legend>
                     <div class="form-group">
@@ -38,7 +37,7 @@
                                 name="firstLetters"
                                 placeholder="A.B."
                                 required
-                                pattern="^[A-Za-z\.]+$"
+                                pattern="([A-zÀ-ž\.]){2,}"
                             />
                         </label>
                         <span id="firstLettersHelp" class="initial-help-text">Vul de voorletter(s) in</span>
@@ -47,14 +46,14 @@
                     <div class="form-group">
                         <label for="middleName">
                             Tussenvoegsel(s)
-                            <input type="text" id="middleName" name="middleName" placeholder="van der" />
+                            <input type="text" id="middleName" name="middleName" placeholder="van der" pattern="^[A-Za-z\.\s]{2,}"/>
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="surName">
                             Achternaam
-                            <input type="text" id="surName" name="surName" placeholder="Rodriguez" required />
+                            <input type="text" id="surName" name="surName" placeholder="Rodriguez" pattern="^[A-zÀ-ž]{2,}" required />
                         </label>
                     </div>
 
@@ -77,13 +76,13 @@
                     </div>
                 </fieldset>
 
-                <!-- Your existing married status fieldset -->
+
                 <fieldset>
                     <legend>
                         1b. Was de overledene getrouwd? of had de overledene een geregistreerd partnerschap? op het
                         moment van overlijden?
                     </legend>
-                    <div class="radio-group">
+                    <div class="form-group">
                         <label>
                             <input type="radio" id="marriedY" name="married" value="yes" required />
                             Ja
@@ -95,7 +94,7 @@
                     </div>
                 </fieldset>
 
-                <!-- Your existing marriage details fieldset -->
+
                 <fieldset data-openklap="married">
                     <legend>
                         Hadden de overledene en diens echtgenoot of geregistreerd partner huwelijkse of partner
@@ -105,36 +104,41 @@
                         <label>
                             <input type="radio" id="akteY" name="akte" value="yes" required />
                             Ja
-                            <span class="help-text">Stuur een kopie van de akte mee met de aangifte.</span>
+                            <span class="initial-help-text">Stuur een kopie van de akte mee met de aangifte.</span>
+                            <span id="fileHelp" class="initial-help-text">Toegestane formaten: .doc, .docx, .xml</span>
                             <input
                                 type="file"
                                 id="docPicker"
                                 accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                                 aria-describedby="fileHelp"
-                            />
+                                />
                         </label>
-                        <span id="fileHelp" class="help-text">Toegestane formaten: .doc, .docx, .xml</span>
+
 
                         <label>
                             <input type="radio" id="akteN" name="akte" value="no" required />
                             Nee
                         </label>
                     </div>
+                </fieldset>
 
+                    <fieldset data-openklap="married">
                     <legend>
                         Hadden de overledene en diens echtgenoot of geregistreerd partner een finaal versterking?
                     </legend>
-                    <div class="radio-group">
+                    <div class="form-group">
                         <label>
                             <input type="radio" id="finaalY" name="finaal" value="yes" required />
-                            Nee
+                            Ja
                         </label>
                         <label>
                             <input type="radio" id="finaalN" name="finaal" value="no" required />
-                            Ja
+                            Nee
                         </label>
                     </div>
+                </fieldset>
 
+            <fieldset data-openklap="married">
                     <legend>Datum huwelijkse of partnerschapswaarde</legend>
                     <div class="form-group">
                         <label>
@@ -144,17 +148,20 @@
                                 name="marriageDate"
                                 aria-describedby="dateHelp"
                                 max="<?php echo date('Y-m-d'); ?>"
-                            />
+                                required />
                         </label>
-                        <span id="dateHelp" class="help-text">Kies de datum van het huwelijk of partnerschap</span>
+                        <span id="dateHelp" class="initial-help-text">Kies de datum van het huwelijk of partnerschap</span>
                     </div>
                 </fieldset>
 
+            <fieldset>
                 <div class="form-navigation">
-                    <button type="button" class="btn btn-secondary">Opslaan voor later</button>
-                    <button type="submit" class="btn btn-primary">Volgende stap</button>
+                    <button type="button" class="btn-secondary">Opslaan voor later</button>
+                    <button type="submit" class="btn-primary">Volgende stap</button>
                 </div>
+            </fieldset>
             </form>
+
         </main>
 
         <footer>

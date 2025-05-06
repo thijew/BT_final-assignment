@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove required attributes to prevent validation errors
             marriageFields.querySelectorAll('input[required]').forEach(input => {
                 input.required = false;
-                input.value = ''; // Optional: clear values
             });
         }
     }
