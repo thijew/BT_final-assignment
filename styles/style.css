@@ -49,39 +49,45 @@
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     background-color: var(--color-bg);
     font-family: "nsSans", sans-serif, Arial, Helvetica;
     color: var(--txt-color);
-    gap: 0.5rem;
+    gap: 1rem;
     text-wrap: balance;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 header {
     color: var(--color-invalid);
 }
 
-h1 {
+h1,
+h2 {
     font-family: "nsSansBold", sans-serif, Arial, Helvetica;
-    padding: 0.5rem;
+    padding: .5rem;
     background-color: var(--color-white);
     /* kan ik hier een psuedo van maken? */
     box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
 }
 
 h2 {
-    font-family: "nsSansBold", sans-serif, Arial, Helvetica;
-    padding: 0.5rem;
     font-size: 1.2rem;
-    background-color: var(--color-white);
-    /* kan ik hier een psuedo van maken? */
-    box-shadow: 0 0.125rem 0 0 rgba(7, 7, 33, 0.15);
 }
 
 form {
     display: flex;
-    gap: 1rem;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 
 }
 
@@ -95,8 +101,6 @@ form {
 
 fieldset {
     border: none;
-    display: flex;
-    flex-direction: column;
 }
 
 legend {
@@ -104,6 +108,8 @@ legend {
     color: var(--txt-color);
     background-color: var(--secondary-color);
     padding-bottom: 0.5rem;
+    width: 100dvw;
+    padding: 1rem;
 }
 
 span {
@@ -113,6 +119,13 @@ span {
 
 form:has(input[type="file"][value="yes"]:checked) [data-openklap="married"] {
     display: flex;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .has-js {
@@ -196,24 +209,39 @@ input:focus {
 .form-group {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     width: 100%;
-    max-width: 400px;
 }
 
 
-label:has(input[type="text"]) {
+label:has(input[type="text"]),
+label:has(input[type="date"])  {
     display: flex;
-    flex-direction: column !important; /* Override any other styles */
-    justify-content: flex-start;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    max-width: 60lvw;
 }
 
 .form-group label {
     display: flex;
-    gap: 0.25rem;
-    font-size: 0.9rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
     width: 100%;
+    font-size: .9rem;
+}
+
+label.file-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
 }
 
 /* Consistent input sizing */
@@ -237,6 +265,7 @@ label:has(input[type="text"]) {
     flex: 1;
     width: 100% !important;
 }
+
 
 /* Special styling for radio buttons group */
 .radio-group {
@@ -274,6 +303,10 @@ label:has(input[type="text"]) {
 }
 .form-group input[type="file"] {
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .initial-help-text {
